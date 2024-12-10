@@ -1,4 +1,4 @@
-package kz.mathncode.backed.entity.factory.faker;
+package kz.mathncode.backend.entity.factory.faker;
 
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;

@@ -1,11 +1,10 @@
-package kz.mathncode.backed.entity;
+package kz.mathncode.backend.entity;
 
 import java.time.ZonedDateTime;
-import java.util.Objects;
 import java.util.UUID;
 
 public class URLResource {
-    private String id;
+    private UUID id;
     private String fromAddress;
     private String toAddress;
     private UUID createdBy;
@@ -14,7 +13,7 @@ public class URLResource {
     public URLResource() {
     }
 
-    public URLResource(String id, String fromAddress, String toAddress, UUID createdBy, ZonedDateTime createdAt) {
+    public URLResource(UUID id, String fromAddress, String toAddress, UUID createdBy, ZonedDateTime createdAt) {
         this.id = id;
         this.fromAddress = fromAddress;
         this.toAddress = toAddress;
@@ -22,11 +21,11 @@ public class URLResource {
         this.createdAt = createdAt;
     }
 
-    public String getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 

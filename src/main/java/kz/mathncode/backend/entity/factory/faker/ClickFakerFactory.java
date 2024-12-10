@@ -1,7 +1,7 @@
-package kz.mathncode.backed.entity.factory.faker;
+package kz.mathncode.backend.entity.factory.faker;
 
 import com.github.javafaker.Faker;
-import kz.mathncode.backed.entity.Click;
+import kz.mathncode.backend.entity.Click;
 
 import java.time.Instant;
 import java.time.ZoneId;

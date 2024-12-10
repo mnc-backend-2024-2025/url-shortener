@@ -1,7 +1,7 @@
-package kz.mathncode.backed.entity.factory.faker;
+package kz.mathncode.backend.entity.factory.faker;
 
 import com.github.javafaker.Faker;
-import kz.mathncode.backed.entity.User;
+import kz.mathncode.backend.entity.User;
 
 import java.time.Instant;
 import java.time.ZoneId;
@@ -13,7 +13,6 @@ public class UserFakerFactory extends FakerFactory<User> {
     public UserFakerFactory(Faker faker) {
         super(faker, Instant.now().minus(7, ChronoUnit.DAYS), Instant.now(), User.class);
     }
-
 
     public UserFakerFactory(Faker faker, Instant minCreatedAtSecond, Instant maxCreatedAtSecond) {
         super(faker, minCreatedAtSecond, maxCreatedAtSecond, User.class);

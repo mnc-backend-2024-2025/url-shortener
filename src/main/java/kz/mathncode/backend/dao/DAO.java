@@ -1,4 +1,4 @@
-package kz.mathncode.backed.dao;
+package kz.mathncode.backend.dao;
 
 import java.sql.SQLException;
 

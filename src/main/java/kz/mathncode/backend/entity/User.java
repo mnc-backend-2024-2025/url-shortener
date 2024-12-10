@@ -1,4 +1,4 @@
-package kz.mathncode.backed.entity;
+package kz.mathncode.backend.entity;
 
 import java.time.ZonedDateTime;
 import java.util.UUID;
@@ -8,6 +8,7 @@ public class User {
     private String firstName;
     private String lastName;
     private String email;
+    private ZonedDateTime createdAt;
 
     @Override
     public String toString() {
@@ -30,8 +31,6 @@ public class User {
 
     public User() {
     }
-
-    private ZonedDateTime createdAt;
 
     public UUID getId() {
         return id;

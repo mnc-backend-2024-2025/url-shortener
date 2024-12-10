@@ -1,4 +1,4 @@
-package kz.mathncode.backed.entity.factory;
+package kz.mathncode.backend.entity.factory;
 
 public interface EntityFactory<T> {
     Class<T> getEntityClass();

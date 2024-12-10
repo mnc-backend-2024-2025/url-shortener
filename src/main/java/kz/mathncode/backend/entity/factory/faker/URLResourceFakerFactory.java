@@ -1,7 +1,7 @@
-package kz.mathncode.backed.entity.factory.faker;
+package kz.mathncode.backend.entity.factory.faker;
 
 import com.github.javafaker.Faker;
-import kz.mathncode.backed.entity.URLResource;
+import kz.mathncode.backend.entity.URLResource;
 
 import java.time.Instant;
 import java.time.ZoneId;
@@ -10,7 +10,7 @@ import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.UUID;
 
-import static kz.mathncode.backed.entity.factory.faker.ListUtilities.randomElementFromList;
+import static kz.mathncode.backend.entity.factory.faker.ListUtilities.randomElementFromList;
 
 public class URLResourceFakerFactory extends FakerFactory<URLResource> {
     private List<UUID> userUUIDs;
@@ -42,7 +42,7 @@ public class URLResourceFakerFactory extends FakerFactory<URLResource> {
 
     @Override
     public URLResource produce() {
-        var id = UUID.randomUUID().toString().substring(32 - 8);
+        var id = UUID.randomUUID();
         var fromAddress = randomElementFromList(fromAddresses);
         var toAddress = randomElementFromList(toAddresses);
         var createdBy = randomElementFromList(userUUIDs);
