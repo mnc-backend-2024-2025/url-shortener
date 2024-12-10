@@ -24,12 +24,12 @@
             <scope>test</scope>
         </dependency>
 
-<!--&lt;!&ndash;        Postgresql jdbc driver&ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>org.postgresql</groupId>-->
-<!--            <artifactId>postgresql</artifactId>-->
-<!--            <version>42.7.4</version>-->
-<!--        </dependency>-->
+<!--        Postgresql jdbc driver-->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.7.4</version>
+        </dependency>
     </dependencies>
 
     <build>
