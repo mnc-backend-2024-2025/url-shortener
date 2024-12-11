@@ -1,27 +1,31 @@
 package kz.mathncode.backend;
 
 import com.github.javafaker.Faker;
+import kz.mathncode.backend.dao.UserDAO;
+import kz.mathncode.backend.entity.User;
 import kz.mathncode.backend.entity.factory.faker.UserFakerFactory;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.sql.Statement;
+import java.util.UUID;
 
 public class Main {
     public static void main(String[] args) throws SQLException {
         //JDBC -- Java Database Connectivity
-        String url = "jdbc:postgresql://localhost:5432/url-shortener";
+        String url = "jdbc:postgresql://localhost:5432/url-shortener?sslmode=disable";
+        Connection connection = DriverManager.getConnection(url, "postgres", "admin");
 
-        Connection connection = DriverManager.getConnection(url, "admin", "admin");
-        String query = """
-                CREATE TABLE users(
-                    ID INTEGER PRIMARY KEY,
-                    FIRST_NAME VARCHAR(100) STRING
-                );
-        """;
+        UserDAO dao = new UserDAO(connection);
+        UserFakerFactory factory = new UserFakerFactory(new Faker());
 
-        Statement statement = connection.createStatement();
-        statement.executeUpdate(query);
+        dao.createTableIfNotExists();
+        dao.create(factory.produce());
+
+        var readUser = dao.readById(UUID.fromString("9b902fed-19dc-4f78-8729-b7584577fecd"));
+        readUser.setEmail("changed@gmail.com");
+        dao.update(readUser, readUser.getId());
+
+        dao.deleteById(UUID.fromString("e892d011-e418-41d6-a54c-4f958e344ea4"));
     }
 }

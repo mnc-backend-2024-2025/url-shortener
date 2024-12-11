@@ -2,6 +2,8 @@ services:
   db:
     image: "postgres:17.2"
     environment:
-      POSTGRES_USER: admin
+      POSTGRES_USER: postgres
       POSTGRES_PASSWORD: admin
       POSTGRES_DB: url-shortener
+    ports:
+      - "5432:5432"

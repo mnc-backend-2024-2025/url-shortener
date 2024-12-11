@@ -4,3 +4,7 @@ tasks:
   up:
     cmds:
       - docker-compose up
+  down:
+    cmds:
+      - docker compose down
+      - docker container prune -a
