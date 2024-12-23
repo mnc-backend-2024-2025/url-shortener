@@ -10,8 +10,6 @@ import java.time.ZonedDateTime;
 import java.util.UUID;
 
 public class UserDAO extends AbstractDAO<User, UUID>{
-    public static final String TABLE_NAME = "user";
-
     public UserDAO(Connection connection) {
         super(connection, User.class, UUID.class);
     }
